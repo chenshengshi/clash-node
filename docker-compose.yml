@@ -1,0 +1,22 @@
+name: clash-node
+
+services:
+  mihomo-node:
+    image: docker.io/metacubex/mihomo:latest
+    container_name: mihomo-node
+    restart: unless-stopped
+    network_mode: host
+    dns:
+      - 129.227.156.148
+      - 43.156.97.238
+    volumes:
+      - ./config.yaml:/root/.config/mihomo/config.yaml:ro,Z
+
+  clash-subscription:
+    image: nginx:1.26.3
+    container_name: clash-subscription
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./sub.yaml:/usr/share/nginx/html/sub.yaml:ro,Z
+      - ./nginx-default.conf:/etc/nginx/conf.d/default.conf:ro,Z

@@ -1,0 +1,15 @@
+mode: rule
+log-level: info
+ipv6: false
+
+listeners:
+  - name: ss-in
+    type: shadowsocks
+    listen: 0.0.0.0
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: "CHANGE_ME_PASSWORD"
+    udp: true
+
+rules:
+  - MATCH,DIRECT
