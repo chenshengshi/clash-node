@@ -8,7 +8,7 @@ listeners:
     listen: 0.0.0.0
     port: 8388
     cipher: chacha20-ietf-poly1305
-    password: "CHANGE_ME_PASSWORD"
+    password: "CNp-9wQ3-rT7m-Kx5v-H2Ld"
     udp: true
 
 rules:
